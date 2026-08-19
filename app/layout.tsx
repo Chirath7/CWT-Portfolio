@@ -1,10 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Creative Web Technology — Data Engineering & Analytics Partner',
   description:
     'Creative Web Technology designs and operates production data pipelines, warehouses, and BI platforms for banking, insurance, government, and enterprise clients across Sri Lanka.',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#0D0D11',
 };
 
 export default function RootLayout({

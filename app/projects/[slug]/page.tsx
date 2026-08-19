@@ -30,46 +30,46 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <Header />
       <main>
         <section className="border-b border-dark-border bg-dark text-white">
-          <div className="mx-auto max-w-content px-6 pb-16 pt-14">
+          <div className="mx-auto max-w-content px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14">
             <Link
               href="/#work"
-              className="inline-flex items-center gap-1 font-mono text-xs font-semibold uppercase tracking-wider text-content-light/60 transition-colors hover:text-brand"
+              className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-content-light/60 transition-colors hover:text-brand sm:text-xs"
             >
               ← All work
             </Link>
 
-            <div className="mt-6 flex items-center gap-3">
-              <span className="tick-label font-mono text-[11px] font-semibold uppercase tracking-wider text-brand">
+            <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-6 sm:gap-3">
+              <span className="tick-label font-mono text-[10px] font-semibold uppercase tracking-wider text-brand sm:text-[11px]">
                 {project.sector}
               </span>
-              <span className="flow-rule w-12 text-brand" />
-              <span className="font-body text-sm font-medium text-content-light/70">{project.client}</span>
+              <span className="flow-rule w-8 text-brand sm:w-12" />
+              <span className="font-body text-xs font-medium text-content-light/70 sm:text-sm">{project.client}</span>
             </div>
 
-            <h1 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-4 max-w-3xl font-display text-2xl font-bold leading-[1.15] tracking-tight text-white sm:mt-5 sm:text-4xl md:text-5xl">
               {project.title}
             </h1>
 
-            <p className="mt-5 max-w-2xl font-body text-lg leading-relaxed text-content-light/70">
+            <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-content-light/70 sm:mt-5 sm:text-lg">
               {project.summary}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-1.5 sm:mt-8 sm:gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-dark-border bg-dark-2 px-3.5 py-1 font-mono text-[11px] font-medium uppercase tracking-wide text-content-light/70"
+                  className="rounded-full border border-dark-border bg-dark-2 px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-wide text-content-light/70 sm:px-3.5 sm:text-[11px]"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-3.5 sm:mt-12 sm:grid-cols-3 sm:gap-4">
               {project.impactStats.map((stat) => (
-                <div key={stat.label} className="rounded-xl border border-dark-border bg-dark-2 p-6">
-                  <p className="font-display text-3xl font-bold text-brand">{stat.value}</p>
-                  <p className="mt-1.5 font-body text-xs font-medium leading-snug text-content-light/60">
+                <div key={stat.label} className="rounded-xl border border-dark-border bg-dark-2 p-4 sm:p-6">
+                  <p className="font-display text-2xl font-bold text-brand sm:text-3xl">{stat.value}</p>
+                  <p className="mt-1 font-body text-xs font-medium leading-snug text-content-light/60 sm:mt-1.5">
                     {stat.label}
                   </p>
                 </div>
@@ -78,49 +78,49 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <section className="border-b border-surface-border bg-surface py-16">
-          <div className="mx-auto max-w-content px-6">
+        <section className="border-b border-surface-border bg-surface py-12 sm:py-16">
+          <div className="mx-auto max-w-content px-4 sm:px-6">
             <div className="max-w-2xl">
-              <span className="tick-label font-mono text-[11px] font-semibold uppercase tracking-wider text-brand">
+              <span className="tick-label font-mono text-[10px] font-semibold uppercase tracking-wider text-brand sm:text-[11px]">
                 Core function
               </span>
-              <p className="mt-4 font-body text-lg leading-relaxed text-content">
+              <p className="mt-3 font-body text-base leading-relaxed text-content sm:mt-4 sm:text-lg">
                 {project.coreFunction}
               </p>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-surface-border bg-surface-muted py-16">
-          <div className="mx-auto max-w-content px-6">
-            <span className="tick-label font-mono text-[11px] font-semibold uppercase tracking-wider text-brand">
+        <section className="border-b border-surface-border bg-surface-muted py-12 sm:py-16">
+          <div className="mx-auto max-w-content px-4 sm:px-6">
+            <span className="tick-label font-mono text-[10px] font-semibold uppercase tracking-wider text-brand sm:text-[11px]">
               Architecture
             </span>
-            <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-content sm:text-3xl">
+            <h2 className="mt-2.5 font-display text-xl font-bold tracking-tight text-content sm:mt-3 sm:text-2xl md:text-3xl">
               How the system is built
             </h2>
 
-            <div className="mt-10 space-y-10">
+            <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-10">
               {project.layers.map((layer, i) => (
                 <div
                   key={layer.title}
-                  className="grid gap-4 border-t border-surface-border pt-8 md:grid-cols-[220px_1fr]"
+                  className="grid gap-3 border-t border-surface-border pt-6 sm:gap-4 sm:pt-8 md:grid-cols-[220px_1fr]"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-2.5 sm:gap-3">
                     <span className="font-mono text-xs font-bold text-brand">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="font-display text-base font-bold leading-snug text-content">
+                    <h3 className="font-display text-sm font-bold leading-snug text-content sm:text-base">
                       {layer.title}
                     </h3>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2.5 sm:space-y-3">
                     {layer.points.map((point) => (
                       <li
                         key={point}
-                        className="flex gap-3 font-body text-sm leading-relaxed text-content-secondary"
+                        className="flex gap-2.5 font-body text-xs leading-relaxed text-content-secondary sm:gap-3 sm:text-sm"
                       >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -132,9 +132,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </section>
 
         {(project.operatesOn || project.useCases || project.users) && (
-          <section className="border-b border-surface-border bg-surface py-16">
-            <div className="mx-auto max-w-content px-6">
-              <div className="grid gap-12 md:grid-cols-2">
+          <section className="border-b border-surface-border bg-surface py-12 sm:py-16">
+            <div className="mx-auto max-w-content px-4 sm:px-6">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
                 {project.operatesOn && (
                   <DetailBlock title={project.operatesOn.title} items={project.operatesOn.items} />
                 )}
@@ -150,10 +150,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         )}
 
         {project.closing && (
-          <section className="border-b border-dark-border bg-dark py-16 text-white">
-            <div className="mx-auto max-w-content px-6">
-              <div className="border-l-4 border-brand pl-6">
-                <p className="max-w-2xl font-display text-xl font-medium leading-relaxed text-white sm:text-2xl">
+          <section className="border-b border-dark-border bg-dark py-12 sm:py-16 text-white">
+            <div className="mx-auto max-w-content px-4 sm:px-6">
+              <div className="border-l-3 sm:border-l-4 border-brand pl-4 sm:pl-6">
+                <p className="max-w-2xl font-display text-lg font-medium leading-relaxed text-white sm:text-xl md:text-2xl">
                   &ldquo;{project.closing}&rdquo;
                 </p>
               </div>
@@ -161,17 +161,17 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </section>
         )}
 
-        <section className="border-b border-surface-border bg-surface py-10">
-          <div className="mx-auto max-w-content px-6">
+        <section className="border-b border-surface-border bg-surface py-8 sm:py-10">
+          <div className="mx-auto max-w-content px-4 sm:px-6">
             <Link
               href={`/projects/${next.slug}`}
-              className="group flex items-center justify-between rounded-2xl border border-surface-border bg-surface-muted p-7 shadow-card-soft transition-all duration-300 hover:border-brand/40 hover:shadow-lg"
+              className="group flex items-center justify-between rounded-2xl border border-surface-border bg-surface-muted p-5 shadow-card-soft transition-all duration-300 hover:border-brand/40 hover:shadow-lg sm:p-7"
             >
               <div>
-                <span className="tick-label font-mono text-[11px] font-semibold uppercase tracking-wider text-content-muted">
+                <span className="tick-label font-mono text-[10px] font-semibold uppercase tracking-wider text-content-muted sm:text-[11px]">
                   Next case study
                 </span>
-                <p className="mt-1 font-display text-lg font-bold text-content group-hover:text-brand transition-colors">
+                <p className="mt-1 font-display text-base font-bold text-content group-hover:text-brand transition-colors sm:text-lg">
                   {next.title}
                 </p>
               </div>
@@ -191,14 +191,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
 function DetailBlock({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-2xl border border-surface-border bg-surface-muted p-7 shadow-card-soft">
-      <span className="tick-label font-mono text-[11px] font-semibold uppercase tracking-wider text-brand">
+    <div className="rounded-2xl border border-surface-border bg-surface-muted p-5 shadow-card-soft sm:p-7">
+      <span className="tick-label font-mono text-[10px] font-semibold uppercase tracking-wider text-brand sm:text-[11px]">
         {title}
       </span>
-      <ul className="mt-4 space-y-3">
+      <ul className="mt-3.5 space-y-2.5 sm:mt-4 sm:space-y-3">
         {items.map((item) => (
-          <li key={item} className="flex gap-3 font-body text-sm leading-relaxed text-content-secondary">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+          <li key={item} className="flex gap-2.5 font-body text-xs leading-relaxed text-content-secondary sm:gap-3 sm:text-sm">
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
             <span>{item}</span>
           </li>
         ))}

@@ -8,14 +8,14 @@ const stats = [
 export default function StatsBand() {
   return (
     <section className="border-b border-dark-border bg-dark text-white">
-      <div className="mx-auto max-w-content px-6 py-16">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+      <div className="mx-auto max-w-content px-4 py-10 sm:px-6 sm:py-16">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col">
-              <p className="font-display text-4xl font-bold tracking-tight text-brand sm:text-5xl">
+              <p className="font-display text-3xl font-bold tracking-tight text-brand sm:text-4xl lg:text-5xl">
                 {s.value}
               </p>
-              <p className="mt-2.5 max-w-[18ch] font-body text-xs font-medium leading-relaxed text-content-light/60">
+              <p className="mt-2 max-w-[18ch] font-body text-xs font-medium leading-relaxed text-content-light/60 sm:mt-2.5">
                 {s.label}
               </p>
             </div>
